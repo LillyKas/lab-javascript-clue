@@ -82,7 +82,7 @@ const roomsArray = [
 // Weapons Array
 
 const weaponsArray = [
-  {name: reportError, weight: 10 },
+  {name: 'knife', weight: 10},
   {name: 'knife', weight: 8},
   {name: 'candlestick' , weight: 2},
   {name: 'dumbbell', weight: 30},
@@ -97,7 +97,7 @@ const weaponsArray = [
 // ITERATION 2
 
 function selectRandom(arr) {
-  let randomNumber = Math.floor(Math.random()*6)
+  let randomNumber = Math.floor(Math.random()* arr.length)
   let element = arr[randomNumber]
   return element
 }
@@ -116,9 +116,10 @@ function pickMystery() {
 
 
 // ITERATION 3
+const envelope = pickMystery()
 
-function revealMystery() {
-  const envelope = pickMystery()
+function revealMystery(envelope) {
+ 
   const firstName = envelope.suspect.firstName
   const lastName = envelope.suspect.lastName
   const weapon = envelope.weapon.name
@@ -129,7 +130,7 @@ function revealMystery() {
   
 }
 
-revealMystery()
+revealMystery(envelope)
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
